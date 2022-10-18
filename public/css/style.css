@@ -1,0 +1,319 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+/* Custom properties */
+:root{
+    /* Font */
+    --primary-font: 'Staatliches', cursive;
+
+    /* Size */
+    --font-size: 1.6rem; /* 1 rem = 10px */
+
+    /* Palette */
+    --primary: #EAE2B7;
+    --darkest-primary: #FCBF49;
+    --secondary: #8ECAE6;
+    --darkest-secondary: #023047;
+    --third : #D62828;
+    --darkest-third : #a32121;
+    --white: #FFFFFF;
+    --black: #000000;
+}
+
+/* Globals - Begin */
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box; /* Hack par box model */
+}
+
+body{
+    line-height: 1.5;
+    font-size: var(--font-size);
+    background-color: var(--primary);   
+}
+
+p{
+    font-size: 1.8rem;
+    color: var(--darkest-secondary);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+h1, h2 , h3{
+    color: var(--darkest-secondary);
+    text-align: center;
+    font-family: var(--primary-font);
+}
+
+h1{
+    font-size: 4rem;
+}
+
+h2{
+    font-size: 3.2rem;
+}
+
+h3{
+    font-size: 2.4rem;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 120rem;
+}
+/* Globals - End */
+
+
+
+/* Header - Begin */
+.header{
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo{
+    margin: 3rem 0;
+}
+/* Header - End*/
+
+
+
+/*  navegation - Begin*/
+.navegation{
+    gap: 2rem;
+    display: flex;
+    padding: 1rem 0;
+    justify-content: center;
+    background-color: var(--darkest-primary);
+}
+
+.navegation__link{
+    font-size: 3rem;
+    color: var(--darkest-secondary);
+    font-family: var(--primary-font);
+}
+
+.navegation__link--active,
+.navegation__link:hover{
+    color: var(--white);
+    text-shadow: var(--black) 0.1rem 0.1rem 0.2rem;
+}
+/*  navegation - End */
+
+
+
+/* Grid - Begin */
+.grid{
+    display: grid;
+    row-gap: 2rem;
+    column-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media(min-width: 768px){
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* Grid - End */
+
+
+
+/* product - Begin*/
+.product{
+    padding: 1rem;
+    background-color: var(--darkest-primary);
+}
+
+.product__image{
+    width: 100%;
+}
+
+.product__name{
+    font-size: 4rem;
+}
+
+.product__price{
+    font-size: 2.8rem;
+    color: var(--third);
+}
+
+.product__name,
+.product__price{
+    margin: 1rem 0;
+    line-height: 1.2;
+    text-align: center;
+    font-family: var(--primary-font);
+}
+/* product - End*/
+
+
+/* graphic - Begin*/
+.graphic{
+    min-height: 30rem;
+    grid-column: 1 / 3;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.graphic--shirt{
+    grid-row: 2 / 3;
+    background-image: url('../assets/img/grafico1.jpg');
+}
+
+.graphic--node{
+    grid-row: 8 / 9;
+    background-image: url('../assets/img/grafico2.jpg');
+}
+
+@media(min-width: 768px){
+    .graphic--node{
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }   
+}
+/* graphic - End */
+
+
+
+/* about us - Begin */
+.about-us{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+}
+
+@media(min-width: 768px){
+    .about-us{
+        column-gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+    }    
+}
+
+.about-us__image{
+    width: 100%;
+    grid-row: 1 / 2;
+}
+
+@media(min-width: 768px){
+    .about-us__image{
+        grid-column: 2 / 3;
+    }
+}
+/* about us - End */
+
+
+
+/* Blocks - Begin */
+.blocks{
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media(min-width: 768px){
+    .blocks{
+        grid-template-columns: repeat(4, 1fr);    
+    }
+}
+
+.block{
+    text-align: center;
+}
+
+.block__image{
+    width: 100%;
+    filter: drop-shadow(.5rem .5rem .5rem var(--black));
+}
+
+.block__title{
+    margin: 0;
+}
+/* Blocks - End */
+
+
+
+/* Products - Begin */
+.shirt{
+    display: grid;
+    padding: 1rem;
+    column-gap: 2rem;
+    grid-template-rows: repeat(2, auto); 
+}
+
+@media(min-width: 768px){
+    .shirt{
+        grid-template-columns: repeat(2, 1fr);
+    }   
+}
+
+.shirt_image{
+    width: 100%;
+}
+
+.form{
+    gap: 2rem;
+    display: grid;
+}
+
+@media(min-width: 768px){
+    .form{
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+.form__field{
+    padding: 1rem;
+    font-size: 2rem;
+    appearance: none;
+    background-color: transparent;
+    color: var(--darkest-secondary);
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1rem solid var(--darkest-primary);
+}
+
+.form__submit{
+    border: none;
+    padding: 2rem;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--white);
+    background-color: var(--third);
+    font-family: var(--primary-font);
+    transition: background-color .5s ease;
+}
+
+.form__submit:hover{
+    background-color: var(--darkest-third);
+}
+/* Products - End*/
+
+
+
+/* Footer - Begin */
+.footer{
+    padding: 1rem 0;
+    margin-top: 2rem;
+    background-color: var(--darkest-primary);
+}
+
+.footer__text{
+    font-size: 2.2rem;
+    text-align: center;    
+    color: var(--white);
+    font-family: var(--primary-font);
+    text-shadow: var(--black) 0.1rem 0.1rem 0.2rem;
+}
+/* Footer - End */
